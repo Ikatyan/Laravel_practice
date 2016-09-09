@@ -1,0 +1,17 @@
+.new-post {
+  padding: 1rem 0;
+  border-bottom: 1px solid #ccc; }
+  .new-post header {
+    margin-bottom: 2rem; }
+
+.posts header {
+  margin-bottom: 2rem; }
+.posts .post {
+  background-color: white;
+  padding-left: 1rem;
+  border-left: 3px solid #a21b24;
+  margin-bottom: 3rem; }
+  .posts .post .info {
+    font-style: italic; }
+
+/*# sourceMappingURL=style.css.map */

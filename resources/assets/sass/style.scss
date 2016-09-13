@@ -19,4 +19,21 @@
     }
   }
 }
+.error{
+  border: 1px solid red;
+  background-color: #f9b5af;
+  color:red;
+  text-align: center;
+  ul{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+}
+.success{
+  border: 1px solid green;
+  background-color: #baf9c5;
+  color: green;
+  text-align: center;
+}
 

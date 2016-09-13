@@ -43,8 +43,4 @@ class UserController extends Controller
         }
         return redirect()->back();
     }
-
-    public function getDashboard(Request $request){
-        return view('dashboard');
-    }
 }

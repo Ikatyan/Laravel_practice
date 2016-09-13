@@ -12,6 +12,9 @@
 */
 
 Route::get('/', function () {
+    if(\Illuminate\Support\Facades\Auth::check()){
+        return redirect()->route('dashboard');
+    }
     return view('welcome');
 })->name('home');
 
@@ -23,12 +26,27 @@ Route::post('/signin',[
     'uses' => 'UserController@postSignIn',
     'as' => 'signin'
 ]);
+Route::get('/logout',[
+    'uses'=>'PostController@getLogout',
+    'as'=>'logout',
+    'middleware'=>'auth'
+]);
 Route::get('/dashboard',[
-    'uses' => 'UserController@getDashboard',
+    'uses' => 'PostController@getDashboard',
     'as' => 'dashboard',
     'middleware' => 'auth'
 ]);
 Route::post('/createpost',[
     'uses'=>'PostController@postCreatePost',
-    'as'=>'post.create'
+    'as'=>'post.create',
+    'middleware'=>'auth'
+]);
+Route::get('/delete-post/{post_id}',[
+    'uses' => 'PostController@getDeletePost',
+    'as'=>'post.delete',
+    'middleware' => 'auth'
+]);
+Route::post('/edit',[
+    'uses' => 'PostController@postEditPost',
+    'as'=>'edit',
 ]);
